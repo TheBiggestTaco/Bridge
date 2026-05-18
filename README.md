@@ -177,3 +177,74 @@ Bridge is feasible and compelling, especially as an orchestration-first product 
 The biggest challenge is not whether multiple AIs can respond in one room—it’s designing turn-taking, context control, and trust signals so the room remains useful instead of chaotic.
 
 If you solve that, Bridge has real product potential.
+
+
+## Validation Plan: Your Exact Question
+
+Yes — **if you can get a second AI participant into the same group chat flow, that is a valid and meaningful initial success milestone**, even if both are ChatGPT-backed personas/instances.
+
+### Why that still counts
+- It proves the core Bridge interaction model (multi-AI + humans in one thread).
+- It validates identity handling (who said what) and turn orchestration basics.
+- It de-risks UX assumptions before adding cross-provider complexity.
+
+### Recommended phased test sequence
+
+**Phase 1: Dual-ChatGPT test (minimum viable proof)**
+- One chat room
+- Humans + ChatGPT-Agent-A + ChatGPT-Agent-B
+- Explicit identity badges
+- Manual `@mention` routing so each agent only speaks when called
+
+**Success criteria for Phase 1**
+- Both AI identities can be invoked independently.
+- Transcript clearly attributes each AI response.
+- Users can compare two AI perspectives in one place without copy/paste.
+
+**Phase 2: Add third non-ChatGPT agent (e.g., Gemini)**
+- Keep same room model and orchestration rules.
+- Add one provider adapter for the third agent.
+- Measure behavior drift (formatting, latency, refusal style, safety differences).
+
+**Success criteria for Phase 2**
+- Third-party agent can join/leave and respond reliably.
+- Cross-provider messages remain understandable and attributable.
+- Turn collisions stay manageable with your orchestration policy.
+
+### Practical caution
+If you are targeting *native* ChatGPT group chat internals directly, platform-level extension constraints may limit what is possible. A safer near-term path is to run Bridge as an external orchestration layer that presents a shared room UX and routes to each provider API behind the scenes.
+
+
+## Comparison: Bridge vs. Perplexity-Style Aggregation
+
+Short answer: **yes, your framing is mostly right**.
+
+Perplexity-like products are typically strongest at:
+- retrieval + synthesis,
+- web/source-grounded answers,
+- and occasionally comparing model outputs in a single response surface.
+
+That is adjacent to Bridge, but not the same as a persistent multi-agent room where agents and humans share a timeline and can take explicit turns.
+
+### Where Bridge is different
+
+Bridge is centered on **conversation topology and agent interaction**, not just answer aggregation:
+- Persistent shared thread with humans and multiple AI identities.
+- Explicit turn-taking/orchestration rules (`@mention`, moderator gate, queueing).
+- Agent lifecycle controls (join/leave/mute per room).
+- Agent-to-agent interaction patterns visible in the same transcript.
+- Role-specific context routing and attribution over time.
+
+### Where Perplexity-like systems overlap
+
+- Multi-source synthesis and comparison UX.
+- Potentially multiple model backends under one product.
+- Fast “best answer” workflows.
+
+### The key distinction
+
+An aggregator asks: **"What is the best combined answer right now?"**
+
+Bridge asks: **"How do multiple AI participants and humans collaborate inside the same ongoing room?"**
+
+So: similar ingredients, different product center of gravity.

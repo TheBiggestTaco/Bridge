@@ -248,3 +248,5 @@ An aggregator asks: **"What is the best combined answer right now?"**
 Bridge asks: **"How do multiple AI participants and humans collaborate inside the same ongoing room?"**
 
 So: similar ingredients, different product center of gravity.
+
+🙂
